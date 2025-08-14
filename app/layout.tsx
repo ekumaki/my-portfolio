@@ -5,6 +5,7 @@ import { siteConfig } from '@/site.config'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollToTop } from '@/components/ui/scroll-to-top'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -64,6 +65,7 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <ScrollToTop />
           </div>
         </ThemeProvider>
       </body>
