@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { projects } from '@/data/projects'
 import { ProjectCard } from '@/components/features/ProjectCard'
+import { TypingAnimation } from '@/components/ui/typing-animation'
 
 export default function HomePage() {
   const featuredProjects = projects.filter(p => p.featured).slice(0, 3)
@@ -14,12 +15,18 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             <span className="block sm:hidden text-left inline-block">
-              AI×自動化で<br />
-              業務を速く、<br />
-              正確に。
+              <TypingAnimation 
+                text="AI×自動化で業務を速く、正確に。" 
+                className="inline-block"
+                isMobile={true}
+              />
             </span>
             <span className="hidden sm:block text-center">
-              AI×自動化で業務を速く、正確に。
+              <TypingAnimation 
+                text="AI×自動化で業務を速く、正確に。" 
+                className="inline-block"
+                isMobile={false}
+              />
             </span>
           </h1>
         </div>
