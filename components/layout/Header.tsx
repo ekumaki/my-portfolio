@@ -13,7 +13,6 @@ const navItems = [
   { href: '/about', label: 'About' },
   { href: '/skills', label: 'Skills' },
   { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -48,13 +47,6 @@ export function Header() {
           </div>
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Link
-              href={siteConfig.resumeUrl}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              <FileText className="mr-2 h-4 w-4" />
-              Resume
-            </Link>
           </div>
         </nav>
 
@@ -88,14 +80,6 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href={siteConfig.resumeUrl}
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              <FileText className="mr-2 h-4 w-4" />
-              Resume
-            </Link>
           </nav>
         </div>
       )}

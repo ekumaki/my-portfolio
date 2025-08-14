@@ -10,7 +10,6 @@ export const siteConfig = {
     zenn: "",
     qiita: ""
   },
-  resumeUrl: "/resume/{{YOUR_RESUME_PDF}}",
   email: "your-email@example.com"
 } as const
 
