@@ -25,10 +25,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Featured Works */}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center text-3xl font-bold">Featured Projects</h2>
+          <h2 className="mb-12 text-center text-3xl font-bold">Works</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
@@ -36,10 +36,10 @@ export default function HomePage() {
           </div>
           <div className="mt-12 text-center">
             <Link
-              href="/projects"
+              href="/works"
               className="inline-flex items-center text-sm font-medium text-primary hover:underline"
             >
-              すべてのプロジェクトを見る
+              すべての制作物を見る
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>

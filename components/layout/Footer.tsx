@@ -22,13 +22,13 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/projects" className="text-muted-foreground hover:text-foreground">
-                  Projects
+                <Link href="/about" className="text-muted-foreground hover:text-foreground">
+                  About
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground">
-                  About
+                <Link href="/works" className="text-muted-foreground hover:text-foreground">
+                  Works
                 </Link>
               </li>
               <li>

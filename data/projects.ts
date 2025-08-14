@@ -31,7 +31,7 @@ export const projects: Project[] = [
       demo: "https://ekumaki.github.io/ai-mini-apps-100/",
       repo: "https://github.com/ekumaki/ai-mini-apps-100"
     },
-    cover: "/images/projects/ai-mini-apps-100.png",
+    cover: "/images/works/ai-mini-apps-100.png",
     metrics: [
       "短時間での大量プロトタイピング",
       "AIプロンプト設計ワークフロー確立",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     links: {
       repo: "https://github.com/yourusername/portfolio"
     },
-    cover: "/images/projects/portfolio-site.png",
+    cover: "/images/works/portfolio-site.png",
     featured: true
   },
   {
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     summary: "定型業務の自動化ツールを開発。レポート生成、データ集計、メール送信などを自動化。",
     tags: ["企業案件", "AI"],
     tech: ["Python", "VBA", "Excel", "pandas"],
-    cover: "/images/projects/automation-tools.png",
+    cover: "/images/works/automation-tools.png",
     metrics: [
       "作業時間を月40時間削減",
       "エラー率を95%削減"

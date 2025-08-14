@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 import { siteConfig } from '@/site.config'
+import { skillSections } from '@/data/skills'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Briefcase, GraduationCap, Award, Heart } from 'lucide-react'
+import { Briefcase, GraduationCap, Award, Heart, Code } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -10,6 +11,36 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const getLevelColor = (level?: string) => {
+    switch (level) {
+      case 'expert':
+        return 'bg-green-500/10 text-green-600 border-green-500/20'
+      case 'advanced':
+        return 'bg-blue-500/10 text-blue-600 border-blue-500/20'
+      case 'intermediate':
+        return 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20'
+      case 'beginner':
+        return 'bg-gray-500/10 text-gray-600 border-gray-500/20'
+      default:
+        return ''
+    }
+  }
+
+  const getLevelLabel = (level?: string) => {
+    switch (level) {
+      case 'expert':
+        return '熟練'
+      case 'advanced':
+        return '上級'
+      case 'intermediate':
+        return '中級'
+      case 'beginner':
+        return '初級'
+      default:
+        return ''
+    }
+  }
+
   return (
     <div className="container py-8 md:py-12">
       <div className="max-w-4xl mx-auto">
@@ -121,6 +152,78 @@ export default function AboutPage() {
                   </span>
                 </li>
               </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Code className="h-5 w-5" />
+                技術スキル
+              </CardTitle>
+              <CardDescription>実務経験のある技術とレベル</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-2">
+                {skillSections.map((section) => (
+                  <div key={section.name} className="space-y-4">
+                    <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">
+                      {section.name}
+                    </h4>
+                    <div className="space-y-3">
+                      {section.items.map((skill) => (
+                        <div key={skill.name} className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <p className="font-medium text-sm">{skill.name}</p>
+                            {skill.experience && (
+                              <p className="text-xs text-muted-foreground">
+                                経験: {skill.experience}
+                              </p>
+                            )}
+                          </div>
+                          {skill.level && (
+                            <Badge
+                              variant="outline"
+                              className={`text-xs ${getLevelColor(skill.level)}`}
+                            >
+                              {getLevelLabel(skill.level)}
+                            </Badge>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>スキル活用の具体例</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h4 className="font-semibold mb-2">AI × 開発効率化</h4>
+                <p className="text-sm text-muted-foreground">
+                  Claude、ChatGPT、VibeCodingを活用し、コード生成・レビュー・ドキュメント作成を効率化。
+                  プロンプトエンジニアリングにより、開発速度を10倍以上に向上。
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">業務自動化</h4>
+                <p className="text-sm text-muted-foreground">
+                  Python + VBAで定型業務を自動化。月40時間の作業時間削減を実現。
+                  Excel/Accessを活用した業務システムの構築で、エラー率を95%削減。
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">Webアプリケーション開発</h4>
+                <p className="text-sm text-muted-foreground">
+                  Next.js + TypeScriptでモダンなWebアプリを構築。
+                  Server Componentsを活用し、高速でSEOに優れたサイトを実現。
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>

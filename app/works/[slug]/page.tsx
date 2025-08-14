@@ -43,10 +43,10 @@ export default function ProjectPage({ params }: Props) {
 
   return (
     <div className="container py-8 md:py-12">
-      <Link href="/projects">
+      <Link href="/works">
         <Button variant="ghost" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          プロジェクト一覧に戻る
+          制作物一覧に戻る
         </Button>
       </Link>
 

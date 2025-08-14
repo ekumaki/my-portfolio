@@ -4,21 +4,21 @@ import { ProjectCard } from '@/components/features/ProjectCard'
 import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: '開発プロジェクトの一覧',
+  title: 'Works',
+  description: '制作物の一覧',
 }
 
-export default function ProjectsPage() {
+export default function WorksPage() {
   const tags = Array.from(new Set(projects.flatMap(p => p.tags))).sort()
 
   return (
     <div className="container py-8 md:py-12">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
-          Projects
+          Works
         </h1>
         <p className="text-lg text-muted-foreground">
-          AIと自動化技術を活用した開発プロジェクト
+          AIと自動化技術を活用した制作物
         </p>
       </div>
 

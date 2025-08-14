@@ -36,7 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </CardContent>
       <CardFooter className="flex justify-between gap-2">
-        <Link href={`/projects/${project.slug}`} className="flex-1">
+        <Link href={`/works/${project.slug}`} className="flex-1">
           <Button variant="default" className="w-full" size="sm">
             詳細を見る
             <ArrowRight className="ml-2 h-4 w-4" />
