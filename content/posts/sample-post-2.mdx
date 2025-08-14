@@ -1,0 +1,156 @@
+---
+title: "Next.js 14 App Routerで作るモダンなポートフォリオサイト"
+date: "2024-01-20"
+tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+excerpt: "Next.js 14の新機能App Routerを使用して、パフォーマンスとSEOに優れたポートフォリオサイトを構築する方法を解説します。"
+cover: "/images/blog/nextjs-portfolio.jpg"
+---
+
+## Next.js 14 App Routerの特徴
+
+Next.js 14のApp Routerは、React Server Components（RSC）をベースとした新しいルーティングシステムです。従来のPages Routerと比較して、以下の利点があります：
+
+- **デフォルトでサーバーコンポーネント**: クライアントバンドルサイズの削減
+- **ネストされたレイアウト**: 共通UIの効率的な管理
+- **並列ルーティング**: 複数のページを同時にレンダリング
+- **インターセプトルーティング**: モーダルなどの実装が簡単に
+
+## プロジェクトのセットアップ
+
+### 1. 初期設定
+
+```bash
+npx create-next-app@latest my-portfolio --typescript --tailwind --app
+cd my-portfolio
+```
+
+### 2. 必要な依存関係のインストール
+
+```bash
+npm install @radix-ui/react-slot class-variance-authority clsx tailwind-merge lucide-react
+npm install -D @types/node
+```
+
+### 3. プロジェクト構造
+
+```
+app/
+├── layout.tsx          # ルートレイアウト
+├── page.tsx           # ホームページ
+├── about/
+│   └── page.tsx      # Aboutページ
+├── projects/
+│   ├── page.tsx      # プロジェクト一覧
+│   └── [slug]/
+│       └── page.tsx  # プロジェクト詳細
+└── blog/
+    ├── page.tsx      # ブログ一覧
+    └── [slug]/
+        └── page.tsx  # ブログ記事
+```
+
+## 主要な実装ポイント
+
+### メタデータの最適化
+
+Next.js 14では、`metadata` APIを使用してSEO最適化を行います：
+
+```typescript
+export const metadata: Metadata = {
+  title: {
+    default: 'ポートフォリオ',
+    template: '%s | ポートフォリオ',
+  },
+  description: 'フルスタックエンジニアのポートフォリオサイト',
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+  },
+}
+```
+
+### Server ComponentsとClient Components
+
+適切なコンポーネントの分離により、パフォーマンスを最適化：
+
+```typescript
+// Server Component（デフォルト）
+export default async function ProjectsPage() {
+  const projects = await getProjects() // サーバーサイドでデータ取得
+  return <ProjectList projects={projects} />
+}
+
+// Client Component
+'use client'
+export function InteractiveFilter() {
+  const [filter, setFilter] = useState('')
+  // インタラクティブな機能
+}
+```
+
+### 画像の最適化
+
+Next.jsの`Image`コンポーネントを使用した自動最適化：
+
+```typescript
+import Image from 'next/image'
+
+<Image
+  src="/images/project.png"
+  alt="プロジェクト"
+  width={800}
+  height={600}
+  loading="lazy"
+  placeholder="blur"
+/>
+```
+
+## パフォーマンス最適化
+
+### 1. 静的生成の活用
+
+可能な限り静的生成を使用してパフォーマンスを向上：
+
+```typescript
+export async function generateStaticParams() {
+  const projects = await getProjects()
+  return projects.map((project) => ({
+    slug: project.slug,
+  }))
+}
+```
+
+### 2. コンポーネントの遅延読み込み
+
+```typescript
+const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
+  loading: () => <p>Loading...</p>,
+})
+```
+
+### 3. フォントの最適化
+
+```typescript
+import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
+```
+
+## デプロイメント
+
+Vercelへのデプロイは非常に簡単です：
+
+1. GitHubリポジトリにプッシュ
+2. Vercelでプロジェクトをインポート
+3. 環境変数を設定（必要な場合）
+4. デプロイ
+
+## まとめ
+
+Next.js 14 App Routerを使用することで、モダンで高速なポートフォリオサイトを構築できました。Server Componentsの活用により、クライアントバンドルサイズを削減し、優れたパフォーマンスを実現しています。
+
+今後は、さらなる機能追加とパフォーマンス最適化を進めていく予定です。
+
+## 参考リンク
+
+- [Next.js公式ドキュメント](https://nextjs.org/docs)
+- [このサイトのソースコード](/projects/portfolio-site)
