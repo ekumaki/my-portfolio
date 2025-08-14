@@ -15,12 +15,16 @@ export default function HomePage() {
       {/* ヒーローセクション */}
       <section className="relative flex min-h-[70vh] items-center justify-center px-6 py-24">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            フルスタックエンジニア
+          <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            <span className="block sm:hidden text-left inline-block">
+              AI×自動化で<br />
+              業務を速く、<br />
+              正確に。
+            </span>
+            <span className="hidden sm:block text-center">
+              AI×自動化で業務を速く、正確に。
+            </span>
           </h1>
-          <p className="mb-8 text-xl text-muted-foreground sm:text-2xl">
-            {siteConfig.title}
-          </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Link
               href={siteConfig.resumeUrl}
