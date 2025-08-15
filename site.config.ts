@@ -6,7 +6,7 @@ export const siteConfig = {
   ogImage: "https://your-domain.com/og-image.png",
   social: {
     github: "ekumaki",
-    x: "",
+    x: "yourusername",
     zenn: "",
     qiita: ""
   },

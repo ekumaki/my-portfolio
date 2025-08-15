@@ -9,9 +9,8 @@ import { siteConfig } from '@/site.config'
 import { ThemeToggle } from '@/components/features/ThemeToggle'
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
   { href: '/works', label: 'Works' },
+  { href: '/#about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ]
 
