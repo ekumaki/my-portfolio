@@ -1,12 +1,14 @@
 "use client"
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { FileText, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { siteConfig } from '@/site.config'
 import { ThemeToggle } from '@/components/features/ThemeToggle'
+import { useTheme } from 'next-themes'
 
 const navItems = [
   { href: '/works', label: 'Works' },
@@ -17,13 +19,21 @@ const navItems = [
 export function Header() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { theme } = useTheme()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">{siteConfig.name}</span>
+            <Image
+              src={theme === 'dark' ? "/logo/exmachina_logo_02.svg" : "/logo/exmachina_logo_01.svg"}
+              alt={siteConfig.name}
+              width={250}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
         </div>
 
