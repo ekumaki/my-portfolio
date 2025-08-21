@@ -59,10 +59,7 @@ export default function HomePage() {
       <section id="about" className="bg-muted/50 px-6 py-24">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">About</h2>
-            <p className="text-lg text-muted-foreground">
-              {siteConfig.title}
-            </p>
+            <h2 className="text-3xl font-bold">About</h2>
           </div>
 
           <div className="space-y-8">
@@ -131,7 +128,11 @@ export default function HomePage() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary">基本情報技術者</Badge>
-                  <Badge variant="secondary">応用情報技術者</Badge>
+                  <Badge variant="secondary">G検定</Badge>
+                  <Badge variant="secondary">データサイエンティスト検定（リテラシーレベル）</Badge>
+                  <Badge variant="secondary">情報セキュリティマネジメント試験</Badge>
+                  <Badge variant="secondary">日商簿記2級</Badge>
+                  <Badge variant="secondary">FP2級</Badge>
                 </div>
               </CardContent>
             </Card>
