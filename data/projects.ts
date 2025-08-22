@@ -65,6 +65,7 @@ export const projects: Project[] = [
     summary: "定型業務の自動化ツールを開発。レポート生成、データ集計、メール送信などを自動化。",
     tags: ["企業案件", "AI"],
     tech: ["Python", "VBA", "Excel", "pandas"],
+    links: {},
     cover: "/images/works/automation-tools.png",
     metrics: [
       "作業時間を月40時間削減",
