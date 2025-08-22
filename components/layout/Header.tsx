@@ -27,7 +27,7 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image
-              src={theme === 'dark' ? "/logo/exmachina_logo_02.svg" : "/logo/exmachina_logo_01.svg"}
+              src={theme === 'dark' ? "/my-portfolio/logo/exmachina_logo_02.svg" : "/my-portfolio/logo/exmachina_logo_01.svg"}
               alt={siteConfig.name}
               width={250}
               height={40}
