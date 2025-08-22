@@ -72,7 +72,11 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="prose prose-neutral dark:prose-invert max-w-none">
                 <p>
-                  Exmachinaは、AI技術と自動化を活用した開発事例や制作物を紹介するポートフォリオサイトです。実践的なソリューションを通じて、技術の可能性をご覧いただけます。
+                  これまでに個人で制作してきた成果物をまとめたポートフォリオサイトです。
+                  <br />
+                  学習や趣味の中で取り組んだWebサイトやアプリケーションを掲載しており、自身のスキルや取り組みの過程を振り返る場としても活用しています。
+                  <br />
+                  今後も制作を重ねながら、作品を追加していく予定です。
                 </p>
               </CardContent>
             </Card>
@@ -86,11 +90,9 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="prose prose-neutral dark:prose-invert max-w-none">
                 <p>
-                  フルスタックエンジニアとして、AIと自動化技術を活用した業務効率化ソリューションの開発に従事しています。
-                  特に、大規模言語モデル（LLM）を活用した開発効率化と、VBAやPythonを使った業務自動化を得意としています。
-                </p>
-                <p>
-                  「技術で人の仕事を楽にする」をモットーに、実用的で保守性の高いシステムの構築を心がけています。
+                  20年間の行政実務を経て、現在はAIを活用したWebサイトやアプリの開発に取り組んでいます。
+                  <br />
+                  常に「人に役立つ仕組みをシンプルに届けること」を念頭に制作を行っています。
                 </p>
               </CardContent>
             </Card>
