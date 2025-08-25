@@ -12,6 +12,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
+          {/* SNSアイコン - 一時的に非表示
           <div className="flex space-x-4">
             {siteConfig.social.x && (
               <Link
@@ -45,6 +46,7 @@ export function Footer() {
               </Link>
             )}
           </div>
+          */}
         </div>
       </div>
     </footer>

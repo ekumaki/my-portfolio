@@ -47,6 +47,7 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
+          {/* SNSセクション - 一時的に非表示
           <Card>
             <CardHeader>
               <CardTitle>SNS</CardTitle>
@@ -55,7 +56,7 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-{siteConfig.social.x && (
+              {siteConfig.social.x && (
                 <Link
                   href={`https://twitter.com/${siteConfig.social.x}`}
                   target="_blank"
@@ -107,6 +108,7 @@ export default function ContactPage() {
               )}
             </CardContent>
           </Card>
+          */}
 
           <Card>
             <CardHeader>
