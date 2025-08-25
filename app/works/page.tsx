@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 }
 
 export default function WorksPage() {
-  const tags = Array.from(new Set(projects.flatMap(p => p.tags))).sort()
 
   return (
     <div className="container py-8 md:py-12">
@@ -18,18 +17,8 @@ export default function WorksPage() {
           Works
         </h1>
         <p className="text-lg text-muted-foreground">
-          AIと自動化技術を活用した制作物
+          これまでに個人で制作してきた成果物です
         </p>
-      </div>
-
-      <div className="mb-8">
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <Badge key={tag} variant="outline">
-              #{tag}
-            </Badge>
-          ))}
-        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
