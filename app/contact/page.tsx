@@ -25,19 +25,25 @@ export default function ContactPage() {
 
         <div className="space-y-6">
           <Card>
-            <CardHeader>
-              <CardTitle>メール</CardTitle>
-              <CardDescription>
-                お仕事のご依頼や技術的なご相談
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Link href={`mailto:${siteConfig.email}`}>
-                <Button className="w-full" size="lg">
-                  <Mail className="mr-2 h-4 w-4" />
-                  メールを送る
-                </Button>
-              </Link>
+            <CardContent className="pt-6">
+              <div className="w-full h-[800px]">
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSc-XPMia4FiHpgtHF1NGowEv-Su6pZfLeD91GGMYoyeWhU6KA/viewform?embedded=true"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none' }}
+                  title="お問い合わせフォーム"
+                  className="rounded-lg"
+                >
+                  読み込み中...
+                </iframe>
+              </div>
+              <div className="mt-4 text-sm text-muted-foreground">
+                <p>※ フォームが表示されない場合は、下記のメールアドレスまで直接ご連絡ください</p>
+                <Link href="mailto:exmachina.work.k@gmail.com" className="text-primary hover:underline">
+                  exmachina.work.k@gmail.com
+                </Link>
+              </div>
             </CardContent>
           </Card>
 
@@ -49,24 +55,7 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              {siteConfig.social.github && (
-                <Link
-                  href={`https://github.com/${siteConfig.social.github}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-lg border hover:bg-accent transition-colors"
-                >
-                  <Github className="h-5 w-5" />
-                  <div className="flex-1">
-                    <p className="font-medium">GitHub</p>
-                    <p className="text-sm text-muted-foreground">
-                      @{siteConfig.social.github}
-                    </p>
-                  </div>
-                </Link>
-              )}
-
-              {siteConfig.social.x && (
+{siteConfig.social.x && (
                 <Link
                   href={`https://twitter.com/${siteConfig.social.x}`}
                   target="_blank"
@@ -126,8 +115,7 @@ export default function ContactPage() {
             <CardContent>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• 基本的にメールでのご連絡をお願いしています</li>
-                <li>• 返信には1-2営業日いただく場合があります</li>
-                <li>• 技術的な質問はGitHubのIssueでも受け付けています</li>
+                <li>• 返信には2-3営業日いただく場合があります</li>
               </ul>
             </CardContent>
           </Card>
