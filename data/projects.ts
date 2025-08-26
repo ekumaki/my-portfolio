@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "AI Mini Apps 100",
     subtitle: "VibeCoding（AI）で作った100のミニWebアプリ集",
     summary: "電卓／日付ツール／テキスト加工などをAI支援で量産。静的HTMLをGitHub Pagesで公開。",
-    description: "AI（VibeCoding）を活用して、日常業務で使える100個のミニWebアプリケーションを短期間で開発。電卓、日付計算、テキスト変換、URLエンコーダーなど、シンプルながら実用的なツールを静的HTMLとJavaScriptで実装し、GitHub Pagesで公開しています。",
+    description: "AI（VibeCoding）を活用して、日常業務で使える100個のミニWebアプリケーションを３日間で開発。電卓、日付計算、テキスト変換、URLエンコーダーなど、シンプルながら実用的なツールを静的HTMLとJavaScriptで実装し、GitHub Pagesで公開しています。",
     tags: ["個人開発", "AI"],
     tech: ["HTML", "JavaScript", "GitHub Pages"],
     links: {

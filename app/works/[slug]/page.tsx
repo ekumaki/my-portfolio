@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ExternalLink, Github, ArrowLeft, Target, Lightbulb, Wrench } from 'lucide-react'
+import { ExternalLink, Github, ArrowLeft, FileText, Wrench } from 'lucide-react'
 import { projects } from '@/data/projects'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -74,7 +74,7 @@ export default function ProjectPage({ params }: Props) {
               >
                 <Button>
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  デモを見る
+                  サイトへ
                 </Button>
               </Link>
             )}
@@ -97,7 +97,7 @@ export default function ProjectPage({ params }: Props) {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5" />
+                <FileText className="h-5 w-5" />
                 概要
               </CardTitle>
             </CardHeader>
@@ -107,20 +107,6 @@ export default function ProjectPage({ params }: Props) {
               </p>
             </CardContent>
           </Card>
-
-          {project.role && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Wrench className="h-5 w-5" />
-                  役割
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{project.role}</p>
-              </CardContent>
-            </Card>
-          )}
 
           <Card>
             <CardHeader>
@@ -139,46 +125,6 @@ export default function ProjectPage({ params }: Props) {
               </div>
             </CardContent>
           </Card>
-
-          {project.metrics && project.metrics.length > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Target className="h-5 w-5" />
-                  成果・メトリクス
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  {project.metrics.map((metric, index) => (
-                    <li key={index} className="text-muted-foreground">
-                      {metric}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          )}
-
-          {project.learnings && project.learnings.length > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5" />
-                  学んだこと
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside space-y-2">
-                  {project.learnings.map((learning, index) => (
-                    <li key={index} className="text-muted-foreground">
-                      {learning}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          )}
         </div>
       </div>
     </div>
