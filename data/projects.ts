@@ -55,7 +55,7 @@ export const projects: Project[] = [
     links: {
       repo: "https://github.com/yourusername/portfolio"
     },
-    cover: "/images/works/portfolio-site.png",
+    cover: "/images/works/my-portfolio.png",
     featured: true
   }
 ]

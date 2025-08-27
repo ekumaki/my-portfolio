@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ExternalLink, Github, ArrowLeft, FileText, Wrench } from 'lucide-react'
 import { projects } from '@/data/projects'
 import { Badge } from '@/components/ui/badge'
@@ -31,6 +32,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.title,
     description: project.summary,
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      type: 'website',
+      images: [
+        {
+          url: project.cover,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: project.title,
+      description: project.summary,
+      images: [project.cover],
+    },
   }
 }
 
@@ -94,6 +114,22 @@ export default function ProjectPage({ params }: Props) {
         </div>
 
         <div className="space-y-8">
+          {project.cover && (
+            <Card>
+              <CardContent className="p-6">
+                <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden bg-background">
+                  <Image
+                    src={project.cover}
+                    alt={project.title}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">

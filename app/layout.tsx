@@ -10,6 +10,7 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://ekumaki.github.io/my-portfolio' : 'http://localhost:3000'),
   title: {
     default: siteConfig.name + ' - ' + siteConfig.title,
     template: `%s | ${siteConfig.name}`,
@@ -25,7 +26,14 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [siteConfig.ogImage],
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
