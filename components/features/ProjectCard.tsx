@@ -32,13 +32,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <p className="text-sm text-muted-foreground mb-4">
           {project.summary}
         </p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
-              {tag}
-            </Badge>
-          ))}
-        </div>
         <div className="flex flex-wrap gap-1">
           {project.tech.map((tech) => (
             <Badge key={tech} variant="outline" className="text-xs">

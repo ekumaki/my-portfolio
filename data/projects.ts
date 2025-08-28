@@ -25,8 +25,8 @@ export const projects: Project[] = [
     subtitle: "VibeCoding（AI）で作った100のミニWebアプリ集",
     summary: "電卓／日付ツール／テキスト加工などをAI支援で量産。静的HTMLをGitHub Pagesで公開。",
     description: "AI（VibeCoding）を活用して、日常業務で使える100個のミニWebアプリケーションを３日間で開発。電卓、日付計算、テキスト変換、URLエンコーダーなど、シンプルながら実用的なツールを静的HTMLとJavaScriptで実装し、GitHub Pagesで公開しています。",
-    tags: ["個人開発", "AI"],
-    tech: ["HTML", "JavaScript", "GitHub Pages"],
+    tags: [],
+    tech: ["HTML", "JavaScript", "GitHub Pages", "Claude Code"],
     links: {
       demo: "https://ekumaki.github.io/ai-mini-apps-100/",
       repo: "https://github.com/ekumaki/ai-mini-apps-100"
@@ -50,8 +50,9 @@ export const projects: Project[] = [
     title: "ポートフォリオサイト",
     subtitle: "Next.js 14で構築した個人ポートフォリオ",
     summary: "このサイト自体もポートフォリオの一つ。Next.js App Router、TypeScript、Tailwind CSSで実装。",
-    tags: ["個人開発"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
+    description: "このサイト自体もポートフォリオの一つ。Next.js 14のApp Router、TypeScript、Tailwind CSSを使用してClaude Codeの支援を受けながら開発しました。作品を効果的に見せるため、シンプルで見やすいデザインを心がけ、レスポンシブ対応やダークモード切り替え機能も実装しています。",
+    tags: [],
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "MDX", "Claude Code"],
     links: {
       repo: "https://github.com/yourusername/portfolio"
     },

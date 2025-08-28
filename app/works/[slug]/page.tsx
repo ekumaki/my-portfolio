@@ -75,12 +75,14 @@ export default function ProjectPage({ params }: Props) {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
             {project.title}
           </h1>
-          <p className="text-xl text-muted-foreground mb-6">{project.subtitle}</p>
+          <p className="text-muted-foreground mb-6">
+            {project.description || project.summary}
+          </p>
           
           <div className="flex flex-wrap gap-2 mb-6">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                #{tag}
+            {project.tech.map((tech) => (
+              <Badge key={tech} variant="outline">
+                {tech}
               </Badge>
             ))}
           </div>
@@ -130,37 +132,7 @@ export default function ProjectPage({ params }: Props) {
             </Card>
           )}
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <FileText className="h-5 w-5" />
-                概要
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                {project.description || project.summary}
-              </p>
-            </CardContent>
-          </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Wrench className="h-5 w-5" />
-                使用技術
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
-                  <Badge key={tech} variant="outline">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>
