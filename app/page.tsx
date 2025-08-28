@@ -1,8 +1,8 @@
 import { siteConfig } from '@/site.config'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Briefcase, Award, Info } from 'lucide-react'
 import { projects } from '@/data/projects'
-import { ProjectCard } from '@/components/features/ProjectCard'
 import { TypingAnimation } from '@/components/ui/typing-animation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -40,7 +40,26 @@ export default function HomePage() {
           <h2 className="mb-12 text-center text-3xl font-bold">Works</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
+              <Link
+                key={project.slug}
+                href={`/works/${project.slug}`}
+                className="group cursor-pointer"
+              >
+                <div className="space-y-1">
+                  <div className="relative aspect-[19/10] overflow-hidden rounded-lg bg-background transition-transform group-hover:scale-[1.02]">
+                    <Image
+                      src={project.cover}
+                      alt={project.title}
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  </div>
+                  <h3 className="text-center font-medium group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+              </Link>
             ))}
           </div>
           <div className="mt-12 text-center">
