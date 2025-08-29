@@ -39,7 +39,15 @@ export function Header() {
     if (pathname === '/') {
       const aboutSection = document.getElementById('about')
       if (aboutSection) {
-        aboutSection.scrollIntoView({ behavior: 'smooth' })
+        // スティッキーヘッダーの高さ（64px + 余白）を考慮してオフセット
+        const headerOffset = 80
+        const elementPosition = aboutSection.offsetTop
+        const offsetPosition = elementPosition - headerOffset
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        })
       }
     } else {
       // 他のページからの場合は、トップページに遷移してからスクロール
