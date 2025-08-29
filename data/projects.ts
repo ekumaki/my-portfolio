@@ -48,6 +48,20 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    slug: "flash-memo",
+    title: "パッとメモ",
+    subtitle: "超軽量・高速Windows用メモアプリ",
+    summary: "クリップボード連携とピン留め機能を備えた、シンプルで使いやすいメモアプリ。",
+    description: "Windows環境で動作する超軽量・高速メモアプリです。クリップボード連携とシンプルな操作性に特化し、ちょっとしたメモを書いてすぐに活用できるのが魅力です。ピン止め機能を使えば常に最前面に表示され、必要なときにすぐアクセスできます。",
+    tags: [],
+    tech: ["C#", ".NET 8", "WPF", "Claude Code"],
+    links: {
+      repo: "https://github.com/ekumaki/flash-memo"
+    },
+    cover: `${basePath}/images/works/flash-memo.png`,
+    featured: true
+  },
+  {
     slug: "portfolio-site",
     title: "ポートフォリオサイト",
     subtitle: "Next.js 14で構築した個人ポートフォリオ",
