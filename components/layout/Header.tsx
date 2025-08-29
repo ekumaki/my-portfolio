@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { FileText, Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { siteConfig } from '@/site.config'
 import { ThemeToggle } from '@/components/features/ThemeToggle'
 import { useTheme } from 'next-themes'
@@ -21,7 +21,15 @@ const navItems = [
 export function Header() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { theme } = useTheme()
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // SSR中はデフォルトのロゴを表示
+  const currentTheme = mounted ? (theme === 'system' ? resolvedTheme : theme) : 'light'
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -29,7 +37,8 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image
-              src={theme === 'dark' ? `${basePath}/logo/exmachina_logo_02.svg` : `${basePath}/logo/exmachina_logo_01.svg`}
+              key={currentTheme}
+              src={currentTheme === 'dark' ? `${basePath}/logo/exmachina_logo_02.svg` : `${basePath}/logo/exmachina_logo_01.svg`}
               alt={siteConfig.name}
               width={250}
               height={40}
