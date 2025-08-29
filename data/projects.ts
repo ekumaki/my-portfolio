@@ -18,6 +18,8 @@ export interface Project {
   featured?: boolean
 }
 
+const basePath = process.env.NODE_ENV === 'production' ? '/my-portfolio' : ''
+
 export const projects: Project[] = [
   {
     slug: "ai-mini-apps-100",
@@ -31,7 +33,7 @@ export const projects: Project[] = [
       demo: "https://ekumaki.github.io/ai-mini-apps-100/",
       repo: "https://github.com/ekumaki/ai-mini-apps-100"
     },
-    cover: "/images/works/ai-mini-apps-100.png",
+    cover: `${basePath}/images/works/ai-mini-apps-100.png`,
     metrics: [
       "短時間での大量プロトタイピング",
       "AIプロンプト設計ワークフロー確立",
@@ -56,7 +58,7 @@ export const projects: Project[] = [
     links: {
       repo: "https://github.com/yourusername/portfolio"
     },
-    cover: "/images/works/my-portfolio.png",
+    cover: `${basePath}/images/works/my-portfolio.png`,
     featured: true
   }
 ]
