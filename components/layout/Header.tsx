@@ -31,6 +31,22 @@ export function Header() {
   // SSR中はデフォルトのロゴを表示
   const currentTheme = mounted ? (theme === 'system' ? resolvedTheme : theme) : 'light'
 
+  // About セクションへのスムーズスクロール
+  const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    
+    // トップページにいる場合は直接スクロール
+    if (pathname === '/') {
+      const aboutSection = document.getElementById('about')
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      // 他のページからの場合は、トップページに遷移してからスクロール
+      window.location.href = `${basePath}/#about`
+    }
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -52,16 +68,30 @@ export function Header() {
         <nav className="hidden md:flex flex-1 items-center justify-between">
           <div className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "transition-colors hover:text-foreground/80",
-                  pathname === item.href ? "text-foreground" : "text-foreground/60"
-                )}
-              >
-                {item.label}
-              </Link>
+              item.label === 'About' ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={handleAboutClick}
+                  className={cn(
+                    "transition-colors hover:text-foreground/80 cursor-pointer",
+                    pathname === item.href ? "text-foreground" : "text-foreground/60"
+                  )}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "transition-colors hover:text-foreground/80",
+                    pathname === item.href ? "text-foreground" : "text-foreground/60"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
           <div className="flex items-center space-x-4">
@@ -87,17 +117,34 @@ export function Header() {
         <div className="md:hidden border-t">
           <nav className="flex flex-col space-y-3 p-4">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-foreground/80",
-                  pathname === item.href ? "text-foreground" : "text-foreground/60"
-                )}
-              >
-                {item.label}
-              </Link>
+              item.label === 'About' ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    handleAboutClick(e)
+                    setIsMenuOpen(false)
+                  }}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-foreground/80 cursor-pointer",
+                    pathname === item.href ? "text-foreground" : "text-foreground/60"
+                  )}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-foreground/80",
+                    pathname === item.href ? "text-foreground" : "text-foreground/60"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
         </div>
