@@ -28,29 +28,55 @@ export function Header() {
     setMounted(true)
   }, [])
 
+  // ページ読み込み時にハッシュがある場合の処理
+  useEffect(() => {
+    if (mounted) {
+      const hash = window.location.hash
+      if (hash === '#about') {
+        // 少し遅延させてからスクロール（DOM要素の完全な読み込みを待つ）
+        setTimeout(() => {
+          const aboutSection = document.getElementById('about')
+          if (aboutSection) {
+            const headerOffset = 80
+            const elementPosition = aboutSection.offsetTop
+            const offsetPosition = elementPosition - headerOffset
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            })
+          }
+        }, 100)
+      }
+    }
+  }, [mounted, pathname])
+
   // SSR中はデフォルトのロゴを表示
   const currentTheme = mounted ? (theme === 'system' ? resolvedTheme : theme) : 'light'
 
-  // About セクションへのスムーズスクロール
+  // About セクションへのスムーズスクロール（統一処理）
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about')
+    if (aboutSection) {
+      const headerOffset = 80
+      const elementPosition = aboutSection.offsetTop
+      const offsetPosition = elementPosition - headerOffset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   const handleAboutClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     
     // トップページにいる場合は直接スクロール
     if (pathname === '/') {
-      const aboutSection = document.getElementById('about')
-      if (aboutSection) {
-        // スティッキーヘッダーの高さ（64px + 余白）を考慮してオフセット
-        const headerOffset = 80
-        const elementPosition = aboutSection.offsetTop
-        const offsetPosition = elementPosition - headerOffset
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        })
-      }
+      scrollToAbout()
     } else {
-      // 他のページからの場合は、トップページに遷移してからスクロール
+      // 他のページからの場合も、統一された位置にスクロール
       window.location.href = `${basePath}/#about`
     }
   }
