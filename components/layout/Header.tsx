@@ -10,6 +10,8 @@ import { siteConfig } from '@/site.config'
 import { ThemeToggle } from '@/components/features/ThemeToggle'
 import { useTheme } from 'next-themes'
 
+const basePath = process.env.NODE_ENV === 'production' ? '/my-portfolio' : ''
+
 const navItems = [
   { href: '/works', label: 'Works' },
   { href: '/#about', label: 'About' },
@@ -27,7 +29,7 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image
-              src={theme === 'dark' ? `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo/exmachina_logo_02.svg` : `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo/exmachina_logo_01.svg`}
+              src={theme === 'dark' ? `${basePath}/logo/exmachina_logo_02.svg` : `${basePath}/logo/exmachina_logo_01.svg`}
               alt={siteConfig.name}
               width={250}
               height={40}
