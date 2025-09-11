@@ -48,6 +48,20 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    slug: "sns-draft-app",
+    title: "下書き箱",
+    subtitle: "SNS投稿の下書きを素早く作成・保存するWebアプリ",
+    summary: "140文字カウンタ搭載、検索・ピン留め、オフライン編集/保存に対応したPWA（ホーム画面から起動できるWebアプリ）。",
+    description: "X（旧twitter）などのSNS投稿の下書きを素早く作って補完できるPWA（ホーム画面から起動できるWebアプリ）です。140文字のカウンタを搭載し、検索・ピン留めで管理も快適、オフラインでも編集と保存が可能です。",
+    tags: [],
+    tech: ["HTML", "JavaScript", "PWA", "GitHub Pages"],
+    links: {
+      demo: "https://ekumaki.github.io/sns-draft-app/",
+      repo: "https://github.com/ekumaki/sns-draft-app"
+    },
+    cover: `${basePath}/images/works/sns-draft-app.png`
+  },
+  {
     slug: "flash-memo",
     title: "パッとメモ",
     subtitle: "超軽量・高速Windows用メモアプリ",
