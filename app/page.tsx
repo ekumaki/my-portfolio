@@ -13,8 +13,8 @@ export default function HomePage() {
   return (
     <main>
       {/* ヒーローセクション */}
-      <section className="relative flex min-h-screen items-center justify-center px-6 py-24">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative flex min-h-[calc(100vh-4rem-1px)] items-center justify-center px-6">
+        <div className="mx-auto max-w-4xl text-center py-24">
           <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             <span className="block sm:hidden text-left inline-block">
               <TypingAnimation 
