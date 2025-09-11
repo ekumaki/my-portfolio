@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <main>
       {/* ヒーローセクション */}
-      <section className="relative flex min-h-[70vh] items-center justify-center px-6 py-24">
+      <section className="relative flex min-h-[70vh] items-center justify-center px-6 py-24 bg-muted/50">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             <span className="block sm:hidden text-left inline-block">
