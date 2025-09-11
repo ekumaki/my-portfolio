@@ -57,7 +57,7 @@ export default function HomePage() {
                       />
                     </div>
                     <div className="px-4 py-3">
-                      <h3 className="text-center font-medium transition-colors group-hover:text-primary relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+                      <h3 className="text-left font-medium transition-colors group-hover:text-primary relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
                         {project.title}
                       </h3>
                     </div>
