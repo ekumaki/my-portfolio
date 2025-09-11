@@ -43,22 +43,26 @@ export default function HomePage() {
               <Link
                 key={project.slug}
                 href={`/works/${project.slug}`}
-                className="group cursor-pointer"
+                className="group block cursor-pointer"
               >
-                <div className="space-y-1">
-                  <div className="relative aspect-[19/10] overflow-hidden rounded-lg bg-background transition-transform group-hover:scale-[1.02]">
-                    <Image
-                      src={project.cover}
-                      alt={project.title}
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                  <h3 className="text-center font-medium group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
+                <Card className="bg-white">
+                  <CardContent className="p-0">
+                    <div className="relative aspect-[19/10] overflow-hidden rounded-t-lg bg-white">
+                      <Image
+                        src={project.cover}
+                        alt={project.title}
+                        fill
+                        className="object-contain p-4"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="px-4 py-3">
+                      <h3 className="text-center font-medium group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </CardContent>
+                </Card>
               </Link>
             ))}
           </div>
