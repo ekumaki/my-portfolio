@@ -56,8 +56,8 @@ export default function HomePage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
-                    <div className="px-4 py-3">
-                      <h3 className="text-left font-medium transition-colors group-hover:text-primary relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+                    <div className="pl-6 pr-4 py-3">
+                      <h3 className="text-left font-medium transition-colors group-hover:text-primary relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[0.5px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
                         {project.title}
                       </h3>
                     </div>
