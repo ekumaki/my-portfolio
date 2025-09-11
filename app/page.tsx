@@ -125,12 +125,12 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="bg-white">基本情報技術者</Badge>
-                  <Badge variant="outline" className="bg-white">G検定</Badge>
-                  <Badge variant="outline" className="bg-white">データサイエンティスト検定（リテラシーレベル）</Badge>
-                  <Badge variant="outline" className="bg-white">情報セキュリティマネジメント試験</Badge>
-                  <Badge variant="outline" className="bg-white">日商簿記2級</Badge>
-                  <Badge variant="outline" className="bg-white">FP2級</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black">基本情報技術者</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black">G検定</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black">データサイエンティスト検定（リテラシーレベル）</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black">情報セキュリティマネジメント試験</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black">日商簿記2級</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black">FP2級</Badge>
                 </div>
               </CardContent>
             </Card>
