@@ -82,7 +82,7 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-8">
-            <Card>
+            <Card className="bg-muted/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Info className="h-5 w-5" />
@@ -100,7 +100,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-muted/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Briefcase className="h-5 w-5" />
@@ -116,7 +116,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-muted/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Award className="h-5 w-5" />
