@@ -122,8 +122,8 @@ export function WorksCarousel({ projects, includeDummy = false }: Props) {
       </div>
 
       {/* Click blockers over peek areas (prevent clicking hidden slides) */}
-      <div aria-hidden className="pointer-events-auto absolute left-0 top-0 h-full w-[48px] z-10" />
-      <div aria-hidden className="pointer-events-auto absolute right-0 top-0 h-full w-[48px] z-10" />
+      <div aria-hidden className="pointer-events-auto absolute left-0 top-0 h-full embla__peek-block z-10" />
+      <div aria-hidden className="pointer-events-auto absolute right-0 top-0 h-full embla__peek-block z-10" />
 
       {/* Arrows (hidden on mobile) */}
       <button
