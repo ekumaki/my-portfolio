@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Embla carousel with left/right peeking (48px) */
+.embla { --slide-spacing: 16px; --slide-peek: 48px; }
+.embla__viewport {
+  overflow: hidden;
+  padding-left: var(--slide-peek);
+  padding-right: var(--slide-peek);
+}
+.embla__container {
+  display: flex;
+  /* Use per-slide padding for spacing to preserve left peek */
+  gap: 0;
+  margin-left: calc(var(--slide-peek) * -1);
+  margin-right: calc(var(--slide-peek) * -1);
+}
+.embla__slide {
+  min-width: 0;
+  flex: 0 0 100%;
+  padding-left: calc(var(--slide-spacing) / 2);
+  padding-right: calc(var(--slide-spacing) / 2);
+}
+/* Responsive widths (3/2/1 per view, accounting for spacing only) */
+@media (min-width: 1024px) { /* lg: 3 per view */
+  .embla__slide { flex-basis: calc((100% - (2 * var(--slide-spacing))) / 3); }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) { /* md: 2 per view */
+  .embla__slide { flex-basis: calc((100% - var(--slide-spacing)) / 2); }
+}
+@media (max-width: 767.98px) { /* sm: 1 per view */
+  .embla__slide { flex-basis: 100%; }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

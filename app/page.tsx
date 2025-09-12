@@ -6,9 +6,10 @@ import { projects } from '@/data/projects'
 import { TypingAnimation } from '@/components/ui/typing-animation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { WorksCarousel } from '@/components/features/WorksCarousel'
 
 export default function HomePage() {
-  const featuredProjects = projects.filter(p => p.featured).slice(0, 3)
+  const allProjects = projects
 
   return (
     <main>
@@ -38,34 +39,7 @@ export default function HomePage() {
       <section className="px-6 py-24 bg-muted/50">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-12 text-center text-3xl font-bold">Works</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/works/${project.slug}`}
-                className="group block cursor-pointer"
-              >
-                <Card className="bg-white dark:bg-black">
-                  <CardContent className="p-0">
-                    <div className="relative aspect-[19/10] overflow-hidden rounded-t-lg bg-white dark:bg-black">
-                      <Image
-                        src={project.cover}
-                        alt={project.title}
-                        fill
-                        className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="pl-8 pr-4 pt-2 pb-5">
-                      <h3 className="text-left font-medium transition-colors group-hover:text-primary relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-[0.5px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-                        {project.title}
-                      </h3>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+          <WorksCarousel projects={allProjects} includeDummy />
           <div className="mt-12 text-center">
             <Link
               href="/works"
