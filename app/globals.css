@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Embla carousel with peeking (48px) */
-.embla { --slide-spacing: 16px; --slide-peek: 48px; }
+/* Embla carousel with peeking (24px) */
+.embla { --slide-spacing: 16px; --slide-peek: 24px; }
 .embla__viewport {
   overflow: hidden;
   padding-left: calc(var(--slide-peek) + var(--slide-spacing) / 2);
