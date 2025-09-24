@@ -36,3 +36,6 @@ next-env.d.ts
 
 # Claude
 .claude/
+
+# Next.js dev server log
+.next-dev.log

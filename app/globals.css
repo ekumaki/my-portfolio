@@ -1,6 +1,41 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Embla carousel with peeking (24px) */
+.embla { --slide-spacing: 16px; --slide-peek: 24px; }
+.embla__viewport {
+  overflow: hidden;
+  padding-left: calc(var(--slide-peek) + var(--slide-spacing) / 2);
+  padding-right: calc(var(--slide-peek) + var(--slide-spacing) / 2);
+}
+.embla__container {
+  display: flex;
+
+  /* Use per-slide padding for spacing to preserve left peek */
+  gap: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.embla__slide {
+  min-width: 0;
+  flex: 0 0 100%;
+
+  
+  padding-left: calc(var(--slide-spacing) / 2);
+  padding-right: calc(var(--slide-spacing) / 2);
+}
+/* Responsive widths (3/2/1 per view, accounting for internal gaps only) */
+@media (min-width: 1024px) { /* lg: 3 per view */
+  .embla__slide { flex-basis: calc((100% - (3 * var(--slide-spacing))) / 3); }
+}
+@media (min-width: 768px) and (max-width: 1023.98px) { /* md: 2 per view */
+  .embla__slide { flex-basis: calc((100% - (2 * var(--slide-spacing))) / 2); }
+}
+@media (max-width: 767.98px) { /* sm: 1 per view */
+  .embla__slide { flex-basis: calc(100% - var(--slide-spacing)); }
+}
+
 
 @layer base {
   :root {
@@ -74,3 +109,6 @@
     }
   }
 }
+
+/* Peek blocker width to match viewport padding */
+.embla__peek-block { width: calc(var(--slide-peek) + var(--slide-spacing) / 2); }
