@@ -1,3 +1,5 @@
+"use client"
+
 import { siteConfig } from '@/site.config'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -18,15 +20,15 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl text-center py-24">
           <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             <span className="block sm:hidden text-left inline-block">
-              <TypingAnimation 
-                text="AI×自動化で業務を速く、正確に。" 
+              <TypingAnimation
+                text="AI×自動化で業務を速く、正確に。"
                 className="inline-block"
                 isMobile={true}
               />
             </span>
             <span className="hidden sm:block text-center">
-              <TypingAnimation 
-                text="AI×自動化で業務を速く、正確に。" 
+              <TypingAnimation
+                text="AI×自動化で業務を速く、正確に。"
                 className="inline-block"
                 isMobile={false}
               />
@@ -39,7 +41,7 @@ export default function HomePage() {
       <section className="px-6 py-24 bg-muted/50">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-12 text-center text-3xl font-bold">Works</h2>
-          <WorksCarousel projects={allProjects} includeDummy />
+          <WorksCarousel projects={allProjects} />
           <div className="mt-12 text-center">
             <Link
               href="/works"
