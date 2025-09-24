@@ -206,7 +206,7 @@ export function WorksCarousel({ projects, includeDummy = false }: Props) {
 
                           fill
 
-                          className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                          className={`object-contain p-4 transition-transform duration-300 group-hover:scale-105 ${project.slug === 'hiit-timer' ? 'brightness-125 contrast-110 dark:brightness-100 dark:contrast-100' : ''}`}
 
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 

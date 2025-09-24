@@ -22,29 +22,18 @@ const basePath = process.env.NODE_ENV === 'production' ? '/my-portfolio' : ''
 
 export const projects: Project[] = [
   {
-    slug: "ai-mini-apps-100",
-    title: "AI Mini Apps 100",
-    subtitle: "VibeCodingとAI支援で作った100のミニWebアプリ集",
-    summary: "電卓／日付ツール／テキスト加工などをAI支援で量産。静的HTMLをGitHub Pagesで公開。",
-    description: "AIとVibeCodingを活用して、日常業務で使える100個のミニWebアプリケーションを3日間で開発。電卓、日付計算、テキスト変換、URLエンコーダーなど、シンプルながら実用的なツールを静的HTMLとJavaScriptで実装し、GitHub Pagesで公開しています。",
+    slug: "hiit-timer",
+    title: "HIITタイマー",
+    subtitle: "大画面表示で集中できるHIITトレーニングタイマー",
+    summary: "大画面表示と簡単操作が特徴のHIITタイマー。オフラインでも利用できます。",
+    description: "トレーニング中の視認性と操作性にこだわったHIITタイマー。大きな残り秒数、円形プログレス表示、最小限の操作で迷わない設計。PWA（ホーム画面から起動できるWebアプリ）対応、オフラインでも利用できます。",
     tags: [],
-    tech: ["HTML", "JavaScript", "GitHub Pages", "Claude Code"],
+    tech: ["TypeScript", "Vite", "PWA", "Web Audio API"],
     links: {
-      demo: "https://ekumaki.github.io/ai-mini-apps-100/",
-      repo: "https://github.com/ekumaki/ai-mini-apps-100"
+      demo: "https://ekumaki.github.io/hiit-timer/",
+      repo: "https://github.com/ekumaki/hiit-timer"
     },
-    cover: `${basePath}/images/works/ai-mini-apps-100.png`,
-    metrics: [
-      "短時間での大量プロトタイピング",
-      "AIプロンプト設計ワークフロー確立",
-      "100個のアプリを一週間で開発"
-    ],
-    role: "企画・開発・デプロイ",
-    learnings: [
-      "AIとの効果的な協働方法",
-      "反復型開発プロセスの最適化",
-      "静的サイトの効率的な管理"
-    ],
+    cover: `${basePath}/images/works/hiit-timer.png`,
     featured: true
   },
   {
@@ -76,6 +65,32 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    slug: "ai-mini-apps-100",
+    title: "AI Mini Apps 100",
+    subtitle: "VibeCodingとAI支援で作った100のミニWebアプリ集",
+    summary: "電卓／日付ツール／テキスト加工などをAI支援で量産。静的HTMLをGitHub Pagesで公開。",
+    description: "AIとVibeCodingを活用して、日常業務で使える100個のミニWebアプリケーションを3日間で開発。電卓、日付計算、テキスト変換、URLエンコーダーなど、シンプルながら実用的なツールを静的HTMLとJavaScriptで実装し、GitHub Pagesで公開しています。",
+    tags: [],
+    tech: ["HTML", "JavaScript", "GitHub Pages", "Claude Code"],
+    links: {
+      demo: "https://ekumaki.github.io/ai-mini-apps-100/",
+      repo: "https://github.com/ekumaki/ai-mini-apps-100"
+    },
+    cover: `${basePath}/images/works/ai-mini-apps-100.png`,
+    metrics: [
+      "短時間での大量プロトタイピング",
+      "AIプロンプト設計ワークフロー確立",
+      "100個のアプリを一週間で開発"
+    ],
+    role: "企画・開発・デプロイ",
+    learnings: [
+      "AIとの効果的な協働方法",
+      "反復型開発プロセスの最適化",
+      "静的サイトの効率的な管理"
+    ],
+    featured: true
+  },
+  {
     slug: "portfolio-site",
     title: "ポートフォリオサイト",
     subtitle: "Next.js 14で構築した個人ポートフォリオ",
@@ -87,21 +102,6 @@ export const projects: Project[] = [
       repo: "https://github.com/yourusername/portfolio"
     },
     cover: `${basePath}/images/works/my-portfolio.png`,
-    featured: true
-  },
-  {
-    slug: "hiit-timer",
-    title: "HIITタイマー",
-    subtitle: "大画面表示で集中できるHIITトレーニングタイマー",
-    summary: "大画面表示と簡単操作が特徴のHIITタイマー。オフラインでも利用できます。",
-    description: "トレーニング中の視認性と操作性にこだわったHIITタイマー。大きな残り秒数、円形プログレス表示、最小限の操作で迷わない設計。PWA（ホーム画面から起動できるWebアプリ）対応、オフラインでも利用できます。",
-    tags: [],
-    tech: ["TypeScript", "Vite", "PWA", "Web Audio API"],
-    links: {
-      demo: "https://ekumaki.github.io/hiit-timer/",
-      repo: "https://github.com/ekumaki/hiit-timer"
-    },
-    cover: `${basePath}/images/works/hiit-timer.png`,
     featured: true
   }
 ]
