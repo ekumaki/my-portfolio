@@ -14,15 +14,17 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="h-full flex flex-col">
       {project.cover && (
-        <div className="relative w-full aspect-[19/10] overflow-hidden rounded-t-lg bg-background">
-          <Image
-            src={project.cover}
-            alt={project.title}
-            fill
-            className="object-contain p-2"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
+        <Link href={`/works/${project.slug}`} className="block group" aria-label={`${project.title} の詳細へ`}>
+          <div className="relative w-full aspect-[19/10] overflow-hidden rounded-t-lg bg-background cursor-pointer transition-transform duration-300 group-hover:scale-[1.01]">
+            <Image
+              src={project.cover}
+              alt={project.title}
+              fill
+              className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        </Link>
       )}
       <CardHeader>
         <CardTitle className="text-xl">{project.title}</CardTitle>
