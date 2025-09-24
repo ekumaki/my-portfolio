@@ -1,3 +1,5 @@
+"use client"
+
 import { siteConfig } from '@/site.config'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -6,26 +8,27 @@ import { projects } from '@/data/projects'
 import { TypingAnimation } from '@/components/ui/typing-animation'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
+import { WorksCarousel } from '@/components/features/WorksCarousel'
 
 export default function HomePage() {
-  const featuredProjects = projects.filter(p => p.featured).slice(0, 3)
+  const allProjects = projects
 
   return (
     <main>
       {/* ヒーローセクション */}
-      <section className="relative flex min-h-[70vh] items-center justify-center px-6 py-24">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative flex min-h-[calc(100vh-4rem-1px)] items-center justify-center px-6">
+        <div className="mx-auto max-w-4xl text-center py-24">
           <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             <span className="block sm:hidden text-left inline-block">
-              <TypingAnimation 
-                text="AI×自動化で業務を速く、正確に。" 
+              <TypingAnimation
+                text="AI×自動化で業務を速く、正確に。"
                 className="inline-block"
                 isMobile={true}
               />
             </span>
             <span className="hidden sm:block text-center">
-              <TypingAnimation 
-                text="AI×自動化で業務を速く、正確に。" 
+              <TypingAnimation
+                text="AI×自動化で業務を速く、正確に。"
                 className="inline-block"
                 isMobile={false}
               />
@@ -35,33 +38,10 @@ export default function HomePage() {
       </section>
 
       {/* Featured Works */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-24 bg-muted/50">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-12 text-center text-3xl font-bold">Works</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <Link
-                key={project.slug}
-                href={`/works/${project.slug}`}
-                className="group cursor-pointer"
-              >
-                <div className="space-y-1">
-                  <div className="relative aspect-[19/10] overflow-hidden rounded-lg bg-background transition-transform group-hover:scale-[1.02]">
-                    <Image
-                      src={project.cover}
-                      alt={project.title}
-                      fill
-                      className="object-contain p-4"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                  <h3 className="text-center font-medium group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <WorksCarousel projects={allProjects} />
           <div className="mt-12 text-center">
             <Link
               href="/works"
@@ -75,14 +55,14 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-muted/50 px-6 py-24">
+      <section id="about" className="px-6 py-24">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold">About</h2>
           </div>
 
           <div className="space-y-8">
-            <Card>
+            <Card className="bg-muted/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Info className="h-5 w-5" />
@@ -100,7 +80,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-muted/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Briefcase className="h-5 w-5" />
@@ -116,7 +96,7 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-muted/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Award className="h-5 w-5" />
@@ -125,12 +105,12 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">基本情報技術者</Badge>
-                  <Badge variant="secondary">G検定</Badge>
-                  <Badge variant="secondary">データサイエンティスト検定（リテラシーレベル）</Badge>
-                  <Badge variant="secondary">情報セキュリティマネジメント試験</Badge>
-                  <Badge variant="secondary">日商簿記2級</Badge>
-                  <Badge variant="secondary">FP2級</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black border-black/40 dark:border-white/60">基本情報技術者</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black border-black/40 dark:border-white/60">G検定</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black border-black/40 dark:border-white/60">データサイエンティスト検定（リテラシーレベル）</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black border-black/40 dark:border-white/60">情報セキュリティマネジメント試験</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black border-black/40 dark:border-white/60">日商簿記2級</Badge>
+                  <Badge variant="outline" className="bg-white dark:bg-black border-black/40 dark:border-white/60">FP2級</Badge>
                 </div>
               </CardContent>
             </Card>
