@@ -28,7 +28,7 @@ export const projects: Project[] = [
     summary: "Webページでテキストをドラッグ選択するだけで、文字数の表示・翻訳・検索をすぐに実行できるシンプルなchrome拡張機能。",
     description: "Webページでテキストをドラッグ選択すると、選択付近に小さなバブルが表示され、文字数の表示・翻訳・検索をすぐに実行できるシンプルなchrome拡張機能です。日々のリサーチや読解を、選択→クリックの最短動線で効率化できます。",
     tags: [],
-    tech: ["JavaScript", "Chrome Extensions", "Manifest V3", "HTML", "CSS"],
+    tech: ["Chrome Extension (MV3)", "Shadow DOM", "JavaScript"],
     links: {
       repo: "https://github.com/ekumaki/quick-seek"
     },
